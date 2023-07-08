@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+@use "../base/mixins" as *;
+
+/** @section Header */
+
+#header {
+    font-size: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: var(--outer-margin) var(--outer-margin) 0;
+    > * {
+        flex-basis: 5rem;
+    }
+    #search {
+        flex-basis: 100vw;
+        order: 1;
+        margin-inline: calc(var(--outer-margin) * -1);
+    }
+    @include css-media-queries($from-breakpoint: tablet) {
+        flex-wrap: initial;
+        > * {
+            flex-basis: initial;
+        }
+        #search {
+            flex: 1;
+            order: initial;
+        }
+    }
+}

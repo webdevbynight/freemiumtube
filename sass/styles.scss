@@ -5,15 +5,20 @@
  * @author Victor Brito
  */
 
-@use "base/mixins" with (
-    $media-queries-breakpoints: (
-        // Add custom breakpoints here if default ones do not fit the project
-    )
-    // Add the enabled browser support to take into account here if different from the default browser enabled support
-    // Add the minimal browser version to take into account here if different from the default browser support
-);
+// @use "base/mixins" with (
+//     $media-queries-breakpoints: (
+//         // Add custom breakpoints here if default ones do not fit the project
+//     )
+//     // Add the enabled browser support to take into account here if different from the default browser enabled support
+//     // Add the minimal browser version to take into account here if different from the default browser support
+// );
+@use "base/mixins";
 @use "variables";
 @use "base/reset";
 @use "base/print";
 @use "typo/font-face";
 @use "typo/typo";
+@use "layout/layout";
+@use "header/header";
+@use "header/logo";
+@use "header/search";

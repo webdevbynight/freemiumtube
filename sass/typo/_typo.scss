@@ -4,4 +4,10 @@
 
 body {
     font-family: var(--font);
+    color: var(--primary-colour);
+}
+input,
+select,
+textarea {
+    color: inherit;
 }

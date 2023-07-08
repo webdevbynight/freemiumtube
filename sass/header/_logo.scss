@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@use "../base/mixins" as *;
+
+/** @section Logo */
+
+#logo {
+    path {
+        &:first-of-type {
+            fill: var(--secondary-colour);
+        }
+        &:last-of-type {
+            fill: var(--primary-colour);
+        }
+    }
+    @include css-media-queries($below-breakpoint: tablet) {
+        path {
+            &:last-of-type {
+                display: none;
+            }
+        }
+    }
+}
