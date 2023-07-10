@@ -16,7 +16,21 @@
     #search {
         flex-basis: 100vw;
         order: 1;
-        margin-inline: calc(var(--outer-margin) * -1);
+        margin: 1rem calc(var(--outer-margin) * -1) 0;
+    }
+    > p {
+        a {
+            &::before {
+                background: url("images/account.svg") no-repeat;
+                display: block;
+                width: 5rem;
+                aspect-ratio: 1;
+                content: "";
+            }
+            > span {
+                @include css-visually-hidden;
+            }
+        }
     }
     @include css-media-queries($from-breakpoint: 768) {
         flex-wrap: initial;

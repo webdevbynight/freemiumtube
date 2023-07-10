@@ -5,17 +5,24 @@
 /** @section Logo */
 
 #logo {
-    path {
-        &:first-of-type {
-            fill: var(--secondary-colour);
-        }
-        &:last-of-type {
-            fill: var(--primary-colour);
-        }
+    display: inline-grid;
+    place-items: center;
+    .play-symbol {
+        fill: var(--secondary-colour);
+    }
+    .site-name {
+        fill: var(--primary-colour);
     }
     @include css-media-queries($below-breakpoint: 768) {
-        path {
+        g {
             &:last-of-type {
+                display: none;
+            }
+        }
+    }
+    @include css-media-queries($from-breakpoint: 768) {
+        g {
+            &:first-of-type {
                 display: none;
             }
         }
