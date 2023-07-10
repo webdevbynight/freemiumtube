@@ -3,5 +3,10 @@
 /** @section General layout */
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100dvh;
+}
+#content {
+    margin: auto var(--outer-margin);
 }
