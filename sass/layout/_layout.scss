@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "../base/mixins" as *;
+
 /** @section General layout */
 
 body {
@@ -8,5 +10,9 @@ body {
     min-height: 100dvh;
 }
 #content {
-    margin: auto var(--outer-margin);
+    margin: var(--outer-margin);
+    @include css-media-queries($from-breakpoint: four-column-video-cards) {
+        max-width: var(--outer-container);
+        margin-inline: auto;
+    }
 }

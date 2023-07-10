@@ -9,6 +9,11 @@
     --primary-colour: #414141;
     --secondary-colour: #68c5fa;
 
-    // Margins
+    // Dimensions
+    --outer-container: 131rem;
+
+    // Margins, spacings and gutter
     --outer-margin: 2rem;
+    --card-block-gutter: 2rem;
+    --card-inline-gutter: 1rem;
 }

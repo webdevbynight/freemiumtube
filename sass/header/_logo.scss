@@ -13,7 +13,7 @@
             fill: var(--primary-colour);
         }
     }
-    @include css-media-queries($below-breakpoint: tablet) {
+    @include css-media-queries($below-breakpoint: 768) {
         path {
             &:last-of-type {
                 display: none;
