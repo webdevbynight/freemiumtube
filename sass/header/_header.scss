@@ -27,19 +27,64 @@
                 aspect-ratio: 1;
                 content: "";
             }
-            > span {
-                @include css-visually-hidden;
-            }
         }
     }
-    @include css-media-queries($from-breakpoint: 768) {
+    @include css-media-queries($from-breakpoint: single-line-header) {
         flex-wrap: initial;
+        align-items: center;
+        gap: var(--outer-margin);
         > * {
             flex-basis: initial;
         }
         #search {
             flex: 1;
             order: initial;
+            margin: 0;
+        }
+        #switch-languages,
+        > p {
+            order: 1;
+        }
+        #switch-languages {
+            flex-basis: 5ch;
+        }
+    }
+    @include css-media-queries($from-breakpoint: two-block-header) {
+        display: grid;
+        grid-template-columns: 1fr 48rem 5ch 5rem;
+        justify-content: end;
+        #logo {
+            justify-self: start;
+        }
+        #search {
+            flex-basis: 48rem;
+        }
+    }
+    @include css-media-queries($below-breakpoint: wide-button-header) {
+        > p {
+            a {
+                > span {
+                    @include css-visually-hidden;
+                }
+            }
+        }
+    }
+    @include css-media-queries($from-breakpoint: wide-button-header) {
+        grid-template-columns: 1fr 48rem 5ch auto;
+        > p {
+            a {
+                font-weight: bold;
+                background: var(--secondary-colour);
+                text-decoration: none;
+                display: flex;
+                gap: .3rem;
+                align-items: center;
+                padding: .4rem;
+                border-radius: .5rem;
+                &::before {
+                    height: 4.4rem;
+                }
+            }
         }
     }
 }

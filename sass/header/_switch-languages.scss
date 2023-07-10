@@ -33,8 +33,19 @@
         padding: .5rem;
         border-radius: .5rem;
         content: attr(data-current-lang);
-        &.select-lang + ul {
-            display: block;
+        &.select-lang {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            + ul {
+                display: block;
+            }
+        }
+    }
+    @include css-media-queries($from-breakpoint: single-line-header) {
+        ul {
+            inset-block-start: 2.5rem;
+            inset-inline-end: 0;
+            inset-inline-start: initial;
         }
     }
 }

@@ -23,7 +23,8 @@
             padding: .5rem;
         }
     }
-    @include css-media-queries($from-breakpoint: tablet) {
+    @include css-media-queries($from-breakpoint: single-line-header) {
+        padding: 0;
         border-block: none;
     }
 }

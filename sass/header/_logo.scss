@@ -7,20 +7,23 @@
 #logo {
     display: inline-grid;
     place-items: center;
+    a {
+        line-height: 0;
+    }
     .play-symbol {
         fill: var(--secondary-colour);
     }
     .site-name {
         fill: var(--primary-colour);
     }
-    @include css-media-queries($below-breakpoint: 768) {
+    @include css-media-queries($below-breakpoint: single-line-header) {
         g {
             &:last-of-type {
                 display: none;
             }
         }
     }
-    @include css-media-queries($from-breakpoint: 768) {
+    @include css-media-queries($from-breakpoint: single-line-header) {
         g {
             &:first-of-type {
                 display: none;
