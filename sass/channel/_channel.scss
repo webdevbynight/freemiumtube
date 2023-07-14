@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "../custom-mixins" as *;
+
 /** @section Channel page */
 
 .channel {
@@ -8,9 +10,9 @@
     gap: 2rem;
     header {
         img {
+            @include avatar;
             display: block;
             margin: 1rem auto;
-            border-radius: 50%;
         }
     }
     h1 {
