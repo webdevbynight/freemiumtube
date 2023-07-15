@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@use "../base/mixins" as *;
+
+/** @section Player */
+
+.player {
+    video {
+        background: var(--primary-colour);
+        display: block;
+    }
+    .controls {
+        color: var(--secondary-colour);
+        background: var(--primary-colour);
+        display: grid;
+        grid-template: repeat(2, 5rem) / repeat(2, auto) 1fr;
+        list-style: none;
+        padding-inline: 2rem;
+        li {
+            &:first-child {
+                grid-column: 1 / -1;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            &:last-child {
+                justify-self: end;
+            }
+        }
+        progress {
+            background: white;
+            flex-basis: 50%;
+            width: initial; // Safari, Google Chrome
+            border: none;
+            appearance: none;
+            cursor: pointer;
+            &::-webkit-progress-bar {
+                background: white;
+            }
+            &::-webkit-progress-value {
+                background: var(--secondary-colour);
+            }
+            &::-moz-progress-bar {
+                background: var(--secondary-colour);
+            }
+        }
+    }
+    @include css-media-queries('screen', $other-media-features: '(pointer: fine)') {
+        .controls {
+            grid-template-rows: 2rem 5rem;
+        }
+    }
+}
