@@ -196,7 +196,7 @@ if ('matchMedia' in window
             const playPause = playerControls.querySelector('.play-pause'),
                 playPauseClasses = playPause.classList;
             let text = playPause.textContent;
-            text = toggleLabel(text, controls.filter(control => control.id === 'playPause')[0].labels);
+            playPause.textContent = toggleLabel(text, controls.filter(control => control.id === 'playPause')[0].labels);
             toggleClass(playPauseClasses, ['play', 'pause']);
             progress.value = 0;
         });
