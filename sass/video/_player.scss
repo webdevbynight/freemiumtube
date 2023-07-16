@@ -10,10 +10,12 @@
         display: block;
     }
     .controls {
+        font-size: 1.4rem;
         color: var(--secondary-colour);
         background: var(--primary-colour);
         display: grid;
-        grid-template: repeat(2, 5rem) / repeat(2, auto) 1fr;
+        grid-template: repeat(2, 5rem) / repeat(3, auto) 1fr;
+        column-gap: 1rem;
         list-style: none;
         padding-inline: 2rem;
         li {

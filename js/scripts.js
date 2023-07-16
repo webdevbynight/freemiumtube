@@ -41,6 +41,25 @@ if ('matchMedia' in window
             {
                 return labels.filter(label => label !== currentLabel)[0];
             },
+            formatTimer = (time, isMachineReadable = false) =>
+            {
+                if (!time) return isMachineReadable ? 'PT0S' : '0:00';
+                const timeDays = Math.floor(time / 86400),
+                    timeHours = Math.floor(time / 3600),
+                    timeMinutes = Math.floor(time / 60),
+                    timeSeconds = isMachineReadable ? time : Math.floor(time),
+                    days = isMachineReadable ? timeDays : 0,
+                    hours = isMachineReadable ? timeHours % 24 : timeHours,
+                    minutes = timeMinutes % 60,
+                    seconds = timeSeconds % 60;
+                if (isMachineReadable) value = `P${days}DT${hours}H${minutes}M${seconds}S`.replaceAll(/(?<![1-9]+)[0](D|H|M|S)/g, '');
+                else
+                {
+                    const timer = hours ? [hours, minutes.toString(10).padStart(2, '0'), seconds.toString(10).padStart(2, '0')] : [minutes, seconds.toString(10).padStart(2, '0')];
+                    value = timer.join(':');
+                }
+                return value;
+            },
             controls =
             [
                 {
@@ -61,12 +80,16 @@ if ('matchMedia' in window
                     labels: ['Désactiver le son', 'Activer le son']
                 },
                 {
+                    id: 'timer',
+                    element: 'span',
+                    classList: ['timer']
+                },
+                {
                     id: 'fullscreen',
                     element: 'button',
                     classList: ['fullscreen', 'enter'],
                     labels: ['Afficher en plein écran', 'Quitter le mode plein écran']
                 }
-                // TODO: add timer
             ];
         video.controls = false;
         player.classList.add('player');
@@ -134,17 +157,34 @@ if ('matchMedia' in window
                     if (hasNotToggled) e.target.textContent = toggleLabel(text, labels);
                 });
             }
-            else
+            else if (element === 'progress')
             {
                 node.setAttribute('value', '0');
                 node.setAttribute('min', '0');
             }
+            else
+            {
+                const currentTime = document.createElement('time'),
+                    duration = document.createElement('time'),
+                    separator = document.createTextNode(' / ');
+                currentTime.classList.add('current-time');
+                currentTime.setAttribute('datetime', 'PT0S');
+                currentTime.textContent = '0:00';
+                duration.classList.add('duration');
+                node.appendChild(currentTime);
+                node.appendChild(separator);
+                node.appendChild(duration);
+            }
             li.appendChild(node);
             playerControls.appendChild(li);
         }
-        const progress = playerControls.querySelector('progress');
+        const timer = playerControls.querySelector('.timer'),
+            duration = timer.querySelector('.duration'),
+            progress = playerControls.querySelector('progress');
         video.addEventListener('loadedmetadata', () =>
         {
+            duration.setAttribute('datetime', formatTimer(video.duration, true));
+            duration.textContent = formatTimer(video.duration);
             progress.setAttribute('max', video.duration);
         });
         video.addEventListener('timeupdate', () =>
