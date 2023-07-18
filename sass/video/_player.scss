@@ -17,7 +17,7 @@
         grid-template: repeat(2, 5rem) / repeat(3, auto) 1fr;
         column-gap: 1rem;
         list-style: none;
-        padding-inline: 2rem;
+        padding: 1rem 2rem;
         li {
             &:first-child {
                 grid-column: 1 / -1;
@@ -28,6 +28,10 @@
             &:last-child {
                 justify-self: end;
             }
+        }
+        button {
+            line-height: 0;
+            border: none;
         }
         progress {
             background: white;
@@ -55,7 +59,16 @@
     }
     @include css-media-queries('screen', $other-media-features: '(pointer: fine)') {
         .controls {
-            grid-template-rows: 2rem 5rem;
+            grid-template-rows: 2rem 2rem;
+            li:not(:first-child) {
+                align-self: center;
+            }
+            button {
+                img {
+                    width: 20px;
+                    aspect-ratio: 1;
+                }
+            }
         }
     }
 }
