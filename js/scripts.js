@@ -37,6 +37,10 @@ if ('matchMedia' in window
                     element.toggle(className);
                 }
             },
+            toggleFile = (currentFile, files) =>
+            {
+                return files.filter(file => file !== currentFile)[0];
+            },
             toggleLabel = (currentLabel, labels) =>
             {
                 return labels.filter(label => label !== currentLabel)[0];
@@ -71,13 +75,15 @@ if ('matchMedia' in window
                     id: 'playPause',
                     element: 'button',
                     classList: ['play-pause', 'play'],
-                    labels: ['Lire', 'Mettre en pause']
+                    labels: ['Lire', 'Mettre en pause'],
+                    files: ['images/play.svg', 'images/pause.svg']
                 },
                 {
                     id: 'muteUnmute',
                     element: 'button',
                     classList: ['mute-unmute', 'mute'],
-                    labels: ['Désactiver le son', 'Activer le son']
+                    labels: ['Désactiver le son', 'Activer le son'],
+                    files: ['images/mute.svg', 'images/unmute.svg']
                 },
                 {
                     id: 'timer',
@@ -88,7 +94,8 @@ if ('matchMedia' in window
                     id: 'fullscreen',
                     element: 'button',
                     classList: ['fullscreen', 'enter'],
-                    labels: ['Afficher en plein écran', 'Quitter le mode plein écran']
+                    labels: ['Afficher en plein écran', 'Quitter le mode plein écran'],
+                    files: ['images/fullscreen-enter.svg', 'images/fullscreen-exit.svg']
                 }
             ];
         video.controls = false;
@@ -99,18 +106,24 @@ if ('matchMedia' in window
         player.appendChild(playerControls);
         for (const control of controls)
         {
-            const { id, element, classList, labels } = control,
+            const { id, element, classList, labels, files } = control,
                 li = document.createElement('li'),
                 node = document.createElement(element);
             node.classList.add(...classList);
             if (element === 'button')
             {
+                const img = document.createElement('img');
+                img.src = control.files[0];
+                img.alt = labels[0];
+                img.width = 50;
+                img.height = 50;
                 node.setAttribute('type', 'button');
-                node.textContent = labels[0];
+                node.appendChild(img);
                 node.addEventListener('click', (e) =>
                 {
-                    const elementClasses = e.target.classList,
-                        text = e.target.textContent;
+                    const elementClasses = node.classList,
+                        img = node.querySelector('img'),
+                        alt = img.alt;
                     let hasNotToggled = true;
                     switch (id)
                     {
@@ -133,7 +146,8 @@ if ('matchMedia' in window
                                 else if ('webkitExitFullscreen', 'webkitExitFullscreen' in document)
                                 {
                                     document.webkitExitFullscreen();
-                                    e.target.textContent = toggleLabel(text, labels);
+                                    img.src = files[0];
+                                    img.alt = labels[0];
                                     hasNotToggled = false;
                                 }
                             }
@@ -145,7 +159,8 @@ if ('matchMedia' in window
                                 else if ('webkitRequestFullscreen', 'webkitRequestFullscreen' in player)
                                 {
                                     player.webkitRequestFullscreen();
-                                    e.target.textContent = toggleLabel(text, labels);
+                                    img.src = files[1];
+                                    img.alt = labels[0];
                                     hasNotToggled = false;
                                 }
                             }
@@ -154,7 +169,11 @@ if ('matchMedia' in window
                         default:
                             break;
                     }
-                    if (hasNotToggled) e.target.textContent = toggleLabel(text, labels);
+                    if (hasNotToggled)
+                    {
+                        img.src = toggleFile(img.getAttribute('src'), files);
+                        img.alt = toggleLabel(alt, labels);
+                    }
                 });
             }
             else if (element === 'progress')
@@ -197,9 +216,11 @@ if ('matchMedia' in window
         video.addEventListener('ended', () =>
         {
             const playPause = playerControls.querySelector('.play-pause'),
-                playPauseClasses = playPause.classList;
-            let text = playPause.textContent;
-            playPause.textContent = toggleLabel(text, controls.filter(control => control.id === 'playPause')[0].labels);
+                playPauseClasses = playPause.classList,
+                img = playPause.querySelector('img');
+            let alt = img.alt;
+            img.src = toggleFile(img.getAttribute('src'), controls.filter(control => control.id === 'playPause')[0].files);
+            img.alt = toggleLabel(alt, controls.filter(control => control.id === 'playPause')[0].labels);
             toggleClass(playPauseClasses, ['play', 'pause']);
             progress.value = 0;
             currentTime.setAttribute('datetime', 'PT0S');
@@ -214,11 +235,14 @@ if ('matchMedia' in window
         // Emulate the toggle changes on the fullscreen button when quitting fullscreen mode by pressing the escape key
         document.addEventListener('fullscreenchange', (e) =>
         {
-            const fullscreenControl = playerControls.querySelector('.fullscreen');
+            const fullscreenControl = playerControls.querySelector('.fullscreen'),
+                img = fullscreenControl.querySelector('img'),
+                alt = img.alt;
             if (document.fullscreenElement === null && fullscreenControl.classList.contains('exit'))
             {
                 toggleClass(fullscreenControl.classList, ['enter', 'exit']);
-                fullscreenControl.textContent = toggleLabel(fullscreenControl.textContent, controls.filter(control => control.id === 'fullscreen')[0].labels);
+                img.src = toggleFile(img.getAttribute('src'), controls.filter(control => control.id === 'fullscreen')[0].files);
+                img.alt = toggleLabel(alt, controls.filter(control => control.id === 'fullscreen')[0].labels);
             }
         });
     }
