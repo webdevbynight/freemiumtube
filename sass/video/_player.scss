@@ -46,6 +46,12 @@
                 background: var(--secondary-colour);
             }
         }
+        .timer {
+            display: inline-grid;
+            grid-template-columns: 3ch 1ch 3ch;
+            gap: 1ch;
+            justify-items: end;
+        }
     }
     @include css-media-queries('screen', $other-media-features: '(pointer: fine)') {
         .controls {

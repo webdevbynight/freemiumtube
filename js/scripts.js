@@ -179,6 +179,7 @@ if ('matchMedia' in window
             playerControls.appendChild(li);
         }
         const timer = playerControls.querySelector('.timer'),
+            currentTime = timer.querySelector('.current-time'),
             duration = timer.querySelector('.duration'),
             progress = playerControls.querySelector('progress');
         video.addEventListener('loadedmetadata', () =>
@@ -190,6 +191,8 @@ if ('matchMedia' in window
         video.addEventListener('timeupdate', () =>
         {
             progress.value = video.currentTime;
+            currentTime.setAttribute('datetime', formatTimer(video.currentTime, true));
+            currentTime.textContent = formatTimer(video.currentTime);
         });
         video.addEventListener('ended', () =>
         {
@@ -199,6 +202,8 @@ if ('matchMedia' in window
             playPause.textContent = toggleLabel(text, controls.filter(control => control.id === 'playPause')[0].labels);
             toggleClass(playPauseClasses, ['play', 'pause']);
             progress.value = 0;
+            currentTime.setAttribute('datetime', 'PT0S');
+            currentTime.textContent = '0:00';
         });
         progress.addEventListener('click', (e) =>
         {
