@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/**
+ * @site FreemiumTube
+ * @author Victor Brito
+ */
+
+@use "base/mixins" with (
+    $media-queries-breakpoints: (
+        single-line-header: 617,
+        two-column-video-cards: 690,
+        two-column-comment-form: 700,
+        two-block-header: 909,
+        three-column-video-cards: 1020,
+        wide-button-header: 1100,
+        four-column-video-cards: 1350,
+    )
+    // Add the enabled browser support to take into account here if different from the default browser enabled support
+    // Add the minimal browser version to take into account here if different from the default browser support
+);
+@use "variables";
+@use "base/reset";
+@use "base/print";
+@use "typo/font-face";
+@use "typo/typo";
+@use "layout/layout";
+@use "header/header";
+@use "header/logo";
+@use "header/search";
+@use "header/switch-languages";
+@use "footer/footer";
+@use "cards/cards";
+@use "channel/channel";
+@use "video/video";
+@use "video/player";
+@use "video/comments";
+@use "forms/forms";
+@use "forms/login";
+@use "account/account";
+@use "account/dashboard";
+@use "account/videos";
+@use "search/results";

@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+@use "../base/mixins" as *;
+
+/** @section Switch languages */
+
+#switch-languages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    ul {
+        background: white;
+        display: none;
+        list-style: none;
+        border: 1px solid;
+        overflow: hidden;
+        position: absolute;
+        inset-block-start: 3.7rem;
+        inset-inline-start: 0;
+        z-index: 1;
+        a {
+            text-decoration: none;
+            padding-inline: .5rem;
+            &[aria-current="true"] {
+                background: var(--secondary-colour);
+            }
+        }
+    }
+    button {
+        line-height: 1;
+        text-transform: uppercase;
+        padding: .5rem;
+        border-radius: .5rem;
+        content: attr(data-current-lang);
+        &.select-lang {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            + ul {
+                display: block;
+            }
+        }
+    }
+    @include css-media-queries($from-breakpoint: single-line-header) {
+        ul {
+            inset-block-start: 2.5rem;
+            inset-inline-end: 0;
+            inset-inline-start: initial;
+        }
+    }
+}
