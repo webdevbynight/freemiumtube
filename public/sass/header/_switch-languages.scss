@@ -21,6 +21,7 @@
         z-index: 1;
         a {
             text-decoration: none;
+            display: block;
             padding-inline: .5rem;
             &[aria-current="true"] {
                 background: var(--secondary-colour);
