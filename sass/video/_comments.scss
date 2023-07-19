@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "../base/mixins" as *;
+
 /** @section Comments */
 
 .comments {
@@ -12,6 +14,45 @@
         border-block-end: 1px solid;
         &:last-of-type {
             border-block-end: none;
+        }
+    }
+    form {
+        p {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-block: 1rem;
+        }
+        input {
+            &[type="submit"] {
+                background: var(--secondary-colour);
+                padding: .5rem;
+                border: none;
+            }
+        }
+        select {
+            background: transparent;
+        }
+        textarea {
+            height: 7.5rem;
+            resize: none;
+        }
+    }
+    > p:only-of-type {
+        text-align: center;
+    }
+    @include css-media-queries($from-breakpoint: two-column-comment-form) {
+        form {
+            display: grid;
+            grid-template-columns: 1fr 15rem;
+            column-gap: 2rem;
+            p {
+                &:last-child {
+                    display: block;
+                    grid-column: 1 / -1;
+                    justify-self: center;
+                }
+            }
         }
     }
 }
