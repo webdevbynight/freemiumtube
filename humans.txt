@@ -1,0 +1,10 @@
+/* TEAM */
+Front-end developer and back-end developer: Victor Brito
+Site: contact@victor-brito.name
+Twitter: @webdevbynight
+Location: Neuilly-sur-Seine, France
+
+/* SITE */
+Last update: 2023/07/21
+Standards: HTML 5, CSS 3, JavaScript, Node.js
+Software: Visual Studio Code
