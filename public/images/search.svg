@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <style type="text/css">
+        circle {
+            stroke: #414141;
+            stroke-width: 2;
+            fill: none;
+        }
+        path {
+            fill: #414141;
+        }
+    </style>
+    <circle cx="30.3552" cy="16.8682" r="12.5" transform="rotate(45 30.3552 16.8682)"/>
+    <path d="M20.6513 24.8419L22.7726 26.9633L7.02074 45.1525L2.77809 40.9099L20.6513 24.8419Z"/>
+</svg>
