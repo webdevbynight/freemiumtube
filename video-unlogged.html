@@ -79,7 +79,7 @@
                     <input type="image" src="images/search.svg" alt="Rechercher">
                 </p>
             </form>
-            <p><a href="account.html"><span>Mon compte</span></a></p>
+            <p><a href="login.html"><span>Se connecter</span></a></p>
         </header>
         <!-- End header -->
 
@@ -98,10 +98,7 @@
                     </p>
                     <p>Publié le <time datetime="1970-01-01T00:00:00Z">1er janvier 1970</time></p>
                     <p>999&nbsp;999&nbsp;999 vues</p>
-                    <p>
-                        999&nbsp;999&nbsp;999 aimés
-                        <button type="button" class="like remove">Je n’aime plus</button>
-                    </p>
+                    <p>999&nbsp;999&nbsp;999 aimés</p>
                 </header>
                 <video width="1920" controls preload="metadata" poster="images/default-poster.svg">
                     <source src="mock-ups/original/video-sample-1835-1080p.mp4" type="video/mp4">
@@ -111,28 +108,44 @@
                 
                 <!-- Begin comments -->
                 <section class="comments">
-                    <h2>0 commentaires</h2>
-                    <p>Soyez le premier à commenter.</p>
+                    <h2>42 commentaires</h2>
 
-                    <!-- Begin comment form -->
-                    <form method="post" action="video.html">
-                        <p>
-                            <label for="comment-body">Votre commentaire</label>
-                            <textarea id="comment-body" name="comment"></textarea>
-                        </p>
-                        <p>
-                            <label for="comment-lang">Langue du commentaire</label>
-                            <select id="comment-lang" name="langId">
-                                <option value="en" lang="en">English</option>
-                                <option value="es" lang="es">Español</option>
-                                <option value="en" lang="fr" selected>Français</option>
-                            </select>
-                        </p>
-                        <p>
-                            <input type="submit" value="Poster le commentaire">
-                        </p>
-                    </form>
-                    <!-- End comment form -->
+                    <article id="comment-1">
+                        <header>
+                            <h3>
+                                <a href="channel.html">
+                                    <img class="avatar" src="images/avatar-default.svg" alt="Auteur, avatar" width="25" height="25">
+                                    Auteur
+                                </a>
+                            </h3>
+                            <p><time datetime="2023-02-27T13:37:42Z">27 février 2023 à 13h37</time></p>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel lorem in mauris volutpat elementum vel id libero. Maecenas non sollicitudin ante, vitae tincidunt justo. Sed at odio lacus. Maecenas sodales magna sit amet convallis mollis. Nam posuere ex magna. Cras ac accumsan est, vel ullamcorper enim. Morbi nunc ipsum, efficitur in commodo ut, facilisis id lectus. Nulla eleifend, ligula sed ultricies malesuada, velit augue eleifend mi, sit amet faucibus neque odio ac neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam hendrerit in turpis ac congue.</p>
+                    </article>
+                    <article id="comment-42">
+                        <header>
+                            <h3>
+                                <a href="channel.html">
+                                    <img class="avatar" src="images/avatar-default.svg" alt="Auteur, avatar" width="25" height="25">
+                                    Auteur
+                                </a>
+                            </h3>
+                            <p><time datetime="2023-02-27T13:37:42Z">27 février 2023 à 13h37</time></p>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel lorem in mauris volutpat elementum vel id libero. Maecenas non sollicitudin ante, vitae tincidunt justo. Sed at odio lacus. Maecenas sodales magna sit amet convallis mollis. Nam posuere ex magna. Cras ac accumsan est, vel ullamcorper enim. Morbi nunc ipsum, efficitur in commodo ut, facilisis id lectus. Nulla eleifend, ligula sed ultricies malesuada, velit augue eleifend mi, sit amet faucibus neque odio ac neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam hendrerit in turpis ac congue.</p>
+                    </article>
+                    <article id="comment-1337">
+                        <header>
+                            <h3>
+                                <a href="channel.html">
+                                    <img class="avatar" src="images/avatar-default.svg" alt="Auteur, avatar" width="25" height="25">
+                                    Auteur
+                                </a>
+                            </h3>
+                            <p><time datetime="2023-02-27T13:37:42Z">27 février 2023 à 13h37</time></p>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel lorem in mauris volutpat elementum vel id libero. Maecenas non sollicitudin ante, vitae tincidunt justo. Sed at odio lacus. Maecenas sodales magna sit amet convallis mollis. Nam posuere ex magna. Cras ac accumsan est, vel ullamcorper enim. Morbi nunc ipsum, efficitur in commodo ut, facilisis id lectus. Nulla eleifend, ligula sed ultricies malesuada, velit augue eleifend mi, sit amet faucibus neque odio ac neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam hendrerit in turpis ac congue.</p>
+                    </article>
                 </section>
                 <!-- End comments -->
 
