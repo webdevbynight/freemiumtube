@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "../base/mixins" as *;
+
 /** @section Back-office forms */
 
 .back-office-form {
@@ -21,10 +23,17 @@
         border-radius: .5rem;
     }
     input {
-        &[type="submit"] {
+        &[type="submit"],
+        &[type="reset"] {
             font-weight: bold;
+        }
+        &[type="submit"] {
             background: var(--secondary-colour);
             border: none;
+        }
+        &[type="reset"] {
+            background: transparent;
+            border-color: var(--secondary-colour);
         }
     }
     select {
@@ -36,5 +45,24 @@
     .extra {
         font-size: 1.2rem;
         text-align: center;
+    }
+    &.confirm {
+        p {
+            &:last-of-type {
+                gap: 1rem;
+            }
+        }
+    }
+    @include css-media-queries($from-breakpoint: 480) {
+        &.confirm {
+            p {
+                &:last-of-type {
+                    flex-direction: initial;
+                    input {
+                        flex: 1;
+                    }
+                }
+            }
+        }
     }
 }
