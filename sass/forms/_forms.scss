@@ -18,7 +18,8 @@
         }
     }
     input,
-    select {
+    select,
+    textarea {
         padding: .5rem;
         border-radius: .5rem;
     }
@@ -38,6 +39,10 @@
     }
     select {
         background: none;
+    }
+    textarea {
+        height: 7.5rem;
+        resize: none;
     }
     .precisions {
         font-size: 1.2rem;
