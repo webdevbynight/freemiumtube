@@ -15,8 +15,11 @@
     label {
         @include css-visually-hidden;
     }
-    input {
+    input,
+    button {
         border: none;
+    }
+    input {
         &[type="search"] {
             background: transparent; // Safari 16.5- iPad OS
             flex: 1;
