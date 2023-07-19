@@ -8,10 +8,13 @@
     "url": "git+https://github.com/webdevbynight/freemiumtube.git"
   },
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "setup": "npm install && cd ./public && npm install",
     "browser-sync": "cd ./public && npm run browser-sync",
-    "validate-html": "cd ./public && npm run validate-html"
+    "validate-html": "cd ./public && npm run validate-html",
+    "dev": "npm run nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
   },
