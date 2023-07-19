@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="323" height="315" viewBox="0 0 323 315" xmlns="http://www.w3.org/2000/svg">
-<rect id="frame" x="0" y="0" width="323" height="315" fill="#fff" stroke="none" stroke-width="0"/>
+<svg width="323" height="349" viewBox="0 0 323 349" xmlns="http://www.w3.org/2000/svg">
+<rect id="frame" x="0" y="0" width="323" height="349" fill="#fff" stroke="none" stroke-width="0"/>
 
 <!-- Association post -->
 <g>
 	<line x1="144" y1="77" x2="48" y2="77" stroke="#d6604d" stroke-width="2"/>
 	<text x="81" y="94" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
-	<line x1="48" y1="238" x2="48" y2="77" stroke="#d6604d" stroke-width="2"/>
+	<line x1="48" y1="255" x2="48" y2="77" stroke="#d6604d" stroke-width="2"/>
 	<text x="53" y="162" fill="#4d4d4d" font-family="Verdana" font-size="12">1,1</text>
 	<g>
 		<path d="M55 52 a14 14 90 0 1 14 14 V77 h-42 V66 a14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
@@ -21,8 +21,8 @@
 <g>
 	<line x1="144" y1="77" x2="263" y2="77" stroke="#d6604d" stroke-width="2"/>
 	<text x="185" y="94" fill="#4d4d4d" font-family="Verdana" font-size="12">1,1</text>
-	<line x1="263" y1="238" x2="263" y2="77" stroke="#d6604d" stroke-width="2"/>
-	<text x="268" y="188" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
+	<line x1="263" y1="255" x2="263" y2="77" stroke="#d6604d" stroke-width="2"/>
+	<text x="268" y="205" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
 	<g>
 		<path d="M300 52 a14 14 90 0 1 14 14 V77 h-102 V66 a14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
 		<path d="M314 77 v11 a14 14 90 0 1 -14 14 H226 a14 14 90 0 1 -14 -14 V77 H102" fill="#fddbc7" stroke="#fddbc7" stroke-width="0"/>
@@ -34,16 +34,16 @@
 
 <!-- Association are in -->
 <g>
-	<line x1="48" y1="238" x2="144" y2="238" stroke="#d6604d" stroke-width="2"/>
-	<text x="92" y="255" fill="#4d4d4d" font-family="Verdana" font-size="12">1,1</text>
-	<line x1="263" y1="238" x2="144" y2="238" stroke="#d6604d" stroke-width="2"/>
-	<text x="197" y="255" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
+	<line x1="48" y1="255" x2="144" y2="255" stroke="#d6604d" stroke-width="2"/>
+	<text x="92" y="272" fill="#4d4d4d" font-family="Verdana" font-size="12">1,1</text>
+	<line x1="263" y1="255" x2="144" y2="255" stroke="#d6604d" stroke-width="2"/>
+	<text x="197" y="272" fill="#4d4d4d" font-family="Verdana" font-size="12">0,N</text>
 	<g>
-		<path d="M155 213 a14 14 90 0 1 14 14 V238 h-50 V227 a14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
-		<path d="M169 238 v11 a14 14 90 0 1 -14 14 H133 a14 14 90 0 1 -14 -14 V238 H50" fill="#fddbc7" stroke="#fddbc7" stroke-width="0"/>
-		<rect x="119" y="213" width="50" height="50" fill="none" rx="14" stroke="#d6604d" stroke-width="2"/>
-		<line x1="119" y1="238" x2="169" y2="238" stroke="#d6604d" stroke-width="1"/>
-		<text x="126" y="230.75" fill="#000" font-family="Verdana" font-size="12">are in</text>
+		<path d="M155 230 a14 14 90 0 1 14 14 V255 h-50 V244 a14 14 90 0 1 14 -14" fill="#f4a582" stroke="#f4a582" stroke-width="0"/>
+		<path d="M169 255 v11 a14 14 90 0 1 -14 14 H133 a14 14 90 0 1 -14 -14 V255 H50" fill="#fddbc7" stroke="#fddbc7" stroke-width="0"/>
+		<rect x="119" y="230" width="50" height="50" fill="none" rx="14" stroke="#d6604d" stroke-width="2"/>
+		<line x1="119" y1="255" x2="169" y2="255" stroke="#d6604d" stroke-width="1"/>
+		<text x="126" y="247.75" fill="#000" font-family="Verdana" font-size="12">are in</text>
 	</g>
 </g>
 
@@ -69,32 +69,34 @@
 <g>
 	<g>
 		<rect x="9" y="170" width="78" height="25" fill="#bababa" stroke="#bababa" stroke-width="0" opacity="1"/>
-		<rect x="9" y="195" width="78" height="111" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0" opacity="1"/>
-		<rect x="9" y="170" width="78" height="136" fill="none" stroke="#878787" stroke-width="2" opacity="1"/>
+		<rect x="9" y="195" width="78" height="145" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0" opacity="1"/>
+		<rect x="9" y="170" width="78" height="170" fill="none" stroke="#878787" stroke-width="2" opacity="1"/>
 		<line x1="9" y1="195" x2="87" y2="195" stroke="#878787" stroke-width="1"/>
 	</g>
 	<text x="28" y="187.75" fill="#000" font-family="Verdana" font-size="12">videos</text>
 	<text x="14" y="212.8" fill="#000" font-family="Verdana" font-size="12">id</text>
 	<line x1="14" y1="215" x2="26" y2="215" stroke="#000" stroke-width="1"/>
-	<text x="14" y="229.8" fill="#000" font-family="Verdana" font-size="12">title</text>
-	<text x="14" y="246.8" fill="#000" font-family="Verdana" font-size="12">description</text>
-	<text x="14" y="263.8" fill="#000" font-family="Verdana" font-size="12">uploaded</text>
-	<text x="14" y="280.8" fill="#000" font-family="Verdana" font-size="12">status</text>
-	<text x="14" y="297.8" fill="#000" font-family="Verdana" font-size="12">published</text>
+	<text x="14" y="229.8" fill="#000" font-family="Verdana" font-size="12">src</text>
+	<text x="14" y="246.8" fill="#000" font-family="Verdana" font-size="12">title</text>
+	<text x="14" y="263.8" fill="#000" font-family="Verdana" font-size="12">description</text>
+	<text x="14" y="280.8" fill="#000" font-family="Verdana" font-size="12">uploaded</text>
+	<text x="14" y="297.8" fill="#000" font-family="Verdana" font-size="12">status</text>
+	<text x="14" y="314.8" fill="#000" font-family="Verdana" font-size="12">published</text>
+	<text x="14" y="331.8" fill="#000" font-family="Verdana" font-size="12">views</text>
 </g>
 
 <!-- Entity languages -->
 <g>
 	<g>
-		<rect x="224" y="196" width="78" height="25" fill="#bababa" stroke="#bababa" stroke-width="0" opacity="1"/>
-		<rect x="224" y="221" width="78" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0" opacity="1"/>
-		<rect x="224" y="196" width="78" height="84" fill="none" stroke="#878787" stroke-width="2" opacity="1"/>
-		<line x1="224" y1="221" x2="302" y2="221" stroke="#878787" stroke-width="1"/>
+		<rect x="224" y="213" width="78" height="25" fill="#bababa" stroke="#bababa" stroke-width="0" opacity="1"/>
+		<rect x="224" y="238" width="78" height="59" fill="#e0e0e0" stroke="#e0e0e0" stroke-width="0" opacity="1"/>
+		<rect x="224" y="213" width="78" height="84" fill="none" stroke="#878787" stroke-width="2" opacity="1"/>
+		<line x1="224" y1="238" x2="302" y2="238" stroke="#878787" stroke-width="1"/>
 	</g>
-	<text x="232" y="213.75" fill="#000" font-family="Verdana" font-size="12">languages</text>
-	<text x="229" y="238.8" fill="#000" font-family="Verdana" font-size="12">id</text>
-	<line x1="229" y1="241" x2="241" y2="241" stroke="#000" stroke-width="1"/>
-	<text x="229" y="255.8" fill="#000" font-family="Verdana" font-size="12">lang</text>
-	<text x="229" y="272.8" fill="#000" font-family="Verdana" font-size="12">description</text>
+	<text x="232" y="230.75" fill="#000" font-family="Verdana" font-size="12">languages</text>
+	<text x="229" y="255.8" fill="#000" font-family="Verdana" font-size="12">id</text>
+	<line x1="229" y1="258" x2="241" y2="258" stroke="#000" stroke-width="1"/>
+	<text x="229" y="272.8" fill="#000" font-family="Verdana" font-size="12">lang</text>
+	<text x="229" y="289.8" fill="#000" font-family="Verdana" font-size="12">description</text>
 </g>
 </svg>
