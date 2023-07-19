@@ -51,3 +51,55 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+.results-cards {
+    section {
+        padding-block: 1rem;
+        &:not(:last-of-type) {
+            border-bottom: 1px solid;
+        }
+    }
+    h3 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    h4 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    .video-card {
+        h4 {
+            img {
+                display: block;
+                margin-inline: auto;
+            }
+        }
+    }
+    .avatar {
+        @include avatar;
+    }
+    @include css-media-queries($from-breakpoint: 580) {
+        .channel-card {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            h4 {
+                flex: 1;
+            }
+            p {
+                flex: 2;
+            }
+        }
+        .video-card {
+            position: relative;
+            overflow: hidden;
+            h4 {
+                img {
+                    margin-inline: 0 1rem;
+                    float: left;
+                }
+            }
+        }
+    }
+}
