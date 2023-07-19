@@ -25,6 +25,9 @@
                 flex-direction: column;
                 justify-content: center;
             }
+            &:not(:first-child) {
+                align-self: center;
+            }
             &:last-child {
                 justify-self: end;
             }
@@ -60,9 +63,6 @@
     @include css-media-queries('screen', $other-media-features: '(pointer: fine)') {
         .controls {
             grid-template-rows: 2rem 2rem;
-            li:not(:first-child) {
-                align-self: center;
-            }
             button {
                 img {
                     width: 20px;
