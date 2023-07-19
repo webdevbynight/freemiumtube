@@ -25,4 +25,17 @@
     p {
         font-size: 1.6rem;
     }
+    .like {
+        vertical-align: initial;
+        padding: .2rem .5rem;
+        border-radius: .5rem;
+        &.add {
+            background: var(--secondary-colour);
+            border: none;
+        }
+        &.remove {
+            padding: .1rem .4rem;
+            border-color: var(--secondary-colour);
+        }
+    }
 }
