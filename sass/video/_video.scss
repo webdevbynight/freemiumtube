@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use "../custom-mixins" as *;
+
 /** @section Video */
 
 .video {
@@ -10,6 +12,10 @@
     header {
         p {
             font-size: 1.2rem;
+        }
+        img {
+            @include avatar;
+            margin-inline-end: 1rem;
         }
     }
     h1 {
