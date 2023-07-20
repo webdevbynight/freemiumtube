@@ -1,6 +1,23 @@
 import db from './index.mjs';
 
-const getVideoById = async (id) =>
+const getAllVideosFromChannel = async (id) =>
+    {
+        try
+        {
+            const sql =
+                `SELECT v.id AS id, v.title AS title, v.description AS description, src, views, published
+                FROM videos v
+                JOIN users u ON u.id = user_id
+                WHERE u.id = ?`,
+                [result] = await db.query(sql, [id]);
+            return result;
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
+    },
+    getVideoById = async (id) =>
     {
         try
         {
@@ -31,4 +48,9 @@ const getVideoById = async (id) =>
         }
     };
 
-export default { getVideoById, increment };
+export default
+{
+    getAllVideosFromChannel,
+    getVideoById,
+    increment
+};
