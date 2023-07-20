@@ -11,9 +11,6 @@ const accountView = (dynamicValues) =>
                     <li><a href="/account/delete">Supprimer mon compte</a></li>
                 </ul>
             </section>
-
-        </main>
-        <!-- End content -->
 `;
             return template;
     };

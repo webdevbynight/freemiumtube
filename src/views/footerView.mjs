@@ -2,7 +2,11 @@ const footerView = (dynamicValues) =>
     {
         const { newWindow, about, developedWithLove } = dynamicValues,
             template =
-`       <!-- Begin footer -->
+`
+        </main>
+        <!-- End content -->
+
+        <!-- Begin footer -->
         <footer id="footer">
             <nav>
                 <ul>
