@@ -1,0 +1,8 @@
+{
+    "":
+    {
+        "language": "pt",
+        "plural-forms": "nplurals=2; plural=(n!=1);"
+    },
+    "%1 view": ["%1 vizualização", "%1 vizualizações"]
+}

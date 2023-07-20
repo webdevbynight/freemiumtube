@@ -1,6 +1,11 @@
+import fs from 'node:fs';
+import gettext from 'gettext.js';
+
+import indexControllers from '../controllers/index.mjs';
+
 const homeView = (dynamicValues) =>
     {
-        const { topPopularVideosList, topPopularVideos } = dynamicValues;
+        const { lang, topPopularVideosList, topPopularVideos } = dynamicValues;
         let template =
 `
             <!-- Begin most popular videos -->
@@ -10,6 +15,13 @@ const homeView = (dynamicValues) =>
 `;
         if (topPopularVideosList.length)
         {
+            const i18n = gettext(),
+                __dirname = indexControllers.getDirname('.'),
+                json = fs.readFileSync(`${__dirname}/../i18n/locales/${lang}/video.json`, 'utf-8');
+            
+            i18n.setLocale(lang);
+            i18n.loadJSON(json);
+
             for (const video of topPopularVideosList)
             {
                 const { id, title, channelId, views } = video,
@@ -29,7 +41,7 @@ const homeView = (dynamicValues) =>
                             ${channelTitle}
                         </a>
                     </p>
-                    <p>${views} 999&nbsp;999&nbsp;999 vues</p>
+                    <p>${i18n._n('%1 view', '%1 views', views, views)}</p>
                 </section>
 
 `;

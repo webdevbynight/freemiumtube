@@ -32,6 +32,7 @@ const getPage = async (req, res) =>
             },
             homeViewParams =
             {
+                lang,
                 topPopularVideosList,
                 topPopularVideos
             };
