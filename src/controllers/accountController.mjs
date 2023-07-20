@@ -14,7 +14,7 @@ const getPage = async (req, res) =>
             __dirname = indexControllers.getDirname('.'),
             generalConfig = indexControllers.getConfig(),
             { lang, siteName } = generalConfig,
-            json = fs.readFileSync(`${__dirname}/../i18n/locales/${lang}/global.json`, { encoding: 'utf-8' }),
+            json = fs.readFileSync(`${__dirname}/../i18n/locales/${lang}/global.json`, 'utf-8'),
             page = [];
         
         i18n.setLocale(lang);
