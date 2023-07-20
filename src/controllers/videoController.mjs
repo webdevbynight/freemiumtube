@@ -47,6 +47,14 @@ const getPage = async (req, res) =>
         pageFragments.push(indexControllers.getFooterPage());
         
         return res.status(status).send(pageFragments.join(''));
+    },
+    increment = async (req, res) =>
+    {
+        const result = await videoModel.increment(Number.parseInt(req.params.id, 10)),
+            { affectedRows } = result,
+            status = affectedRows ? 204 : 404;
+
+        return res.sendStatus(status);
     };
 
-export default { getPage };
+export default { getPage, increment };

@@ -16,6 +16,19 @@ const getVideoById = async (id) =>
         {
             console.error(err);
         }
+    },
+    increment = async (id) =>
+    {
+        try
+        {
+            const sql = `UPDATE videos SET views = views + 1 WHERE id = ?`,
+                [result] = await db.query(sql, [id]);
+            return result;
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
     };
 
-export default { getVideoById };
+export default { getVideoById, increment };
