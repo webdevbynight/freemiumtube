@@ -14,6 +14,7 @@ const getConfig = () =>
         const config =
             {
                 lang: 'en', // TODO: make it dynamic (user preference)
+                locale: 'GB', // TODO: make it dynamic (user preference)
                 siteHost: process.env.HOST,
                 siteName: 'FreemiumTube'
             };
