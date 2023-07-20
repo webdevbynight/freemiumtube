@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import fs from 'node:fs';
 import url from 'node:url';
 import gettext from 'gettext.js';
@@ -11,6 +12,7 @@ const getConfig = () =>
         const config =
             {
                 lang: 'en', // TODO: make it dynamic (user preference)
+                siteHost: process.env.HOST,
                 siteName: 'FreemiumTube'
             };
         return config;
