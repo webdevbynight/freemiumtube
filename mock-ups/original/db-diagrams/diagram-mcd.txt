@@ -1,6 +1,6 @@
 :
 are in, 11 videos, 0N languages
-languages: id, lang, description
+languages: id, lang, locale, description
 are posted in, 11 comments, 0N languages
 
 videos: id, src, title, description, uploaded, status, published, views

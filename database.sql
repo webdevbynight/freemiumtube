@@ -3,6 +3,7 @@ CREATE TABLE languages
 (
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     lang VARCHAR(7) NOT NULL UNIQUE KEY,
+    locale CHAR(2) NOT NULL UNIQUE KEY,
     description VARCHAR(255) NOT NULL
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
@@ -61,12 +62,16 @@ CREATE TABLE likes
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- Insertions for languages
-INSERT INTO languages (lang, description) VALUES
-    ('en', 'English'),
-    ('es', 'Español'),
-    ('fr', 'Français'),
-    ('pt', 'Português');
+INSERT INTO languages (lang, locale, description) VALUES
+    ('en', 'GB', 'English'),
+    ('es', 'ES', 'Español'),
+    ('fr', 'FR', 'Français'),
+    ('pt', 'PT', 'Português');
 
 -- Insertions for users
 INSERT INTO users (lang_id, email, password, channel, description, url, registered, role)
     VALUES(1, 'contact@victor-brito.name', '123456', 'webdevbynight', 'Front-end developer', 'https://victor-brito.dev', UNIX_TIMESTAMP(), 1);
+
+-- Insertion for videos (provisional)
+INSERT INTO videos (lang_id, user_id, src, title, description, uploaded, status, published)
+    VALUES(1, 1, 'video-sample-1835-1080p.mp4', 'Storm in Paris', 'A storm filmed during a week-end in the afternoon in Paris from a restaurant.', UNIX_TIMESTAMP(), 7, UNIX_TIMESTAMP());
