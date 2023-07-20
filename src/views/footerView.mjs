@@ -13,7 +13,7 @@ const footerView = (dynamicValues) =>
         <!-- End footer -->
 
         <!-- Begin scripts -->
-        <script src="js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
         <!-- End scripts -->
 
     </body>
