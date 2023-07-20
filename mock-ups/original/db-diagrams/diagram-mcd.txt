@@ -1,0 +1,14 @@
+:
+are in, 11 videos, 0N languages
+languages: id, lang, description
+are posted in, 11 comments, 0N languages
+
+videos: id, src, title, description, uploaded, status, published, views
+post, 0N users, 11 videos
+prefer reading, 11 users, 0N languages
+comments: id, comment, published
+
+:
+like, 0N users, 0N videos
+users: id, email, password, channel, title, description, url, avatar, registered, role
+leave, 0N users, 11 comments
