@@ -26,6 +26,7 @@ const getPage = async (req, res) =>
             },
             accountViewParams =
             {
+                lang,
                 myAccount
             };
 
