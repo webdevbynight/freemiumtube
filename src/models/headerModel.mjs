@@ -1,6 +1,6 @@
 import db from './index.mjs';
 
-const findAllLanguages = async () =>
+const getAllLanguages = async () =>
     {
         try
         {
@@ -13,4 +13,4 @@ const findAllLanguages = async () =>
         }
     };
 
-export default { findAllLanguages };
+export default { getAllLanguages };

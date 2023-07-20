@@ -38,7 +38,7 @@ const getHeadPage = () =>
     },
     getheaderPage = async (pageUrl) =>
     {
-        const languages = await headerModel.findAllLanguages(),
+        const languages = await headerModel.getAllLanguages(),
             displayOtherLang = i18n.__('Display the site in another language'),
             search = i18n.__('Search'),
             searchVerb = i18n.__('To search'),
