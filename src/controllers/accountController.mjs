@@ -26,7 +26,6 @@ const getPage = async (req, res) =>
             searchVerb = i18n.__('To search'),
             myAccount = i18n.__('My account'),
             login = i18n.__('Log in'),
-            about = i18n.__('About'),
             developedWithLove = i18n.__('Developped with love by'),
             accountTitleViewParams =
             {
@@ -53,7 +52,6 @@ const getPage = async (req, res) =>
             footerViewParams =
             {
                 newWindow,
-                about,
                 developedWithLove
             };
 

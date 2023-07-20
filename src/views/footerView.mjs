@@ -1,6 +1,6 @@
 const footerView = (dynamicValues) =>
     {
-        const { newWindow, about, developedWithLove } = dynamicValues,
+        const { newWindow, developedWithLove } = dynamicValues,
             template =
 `
         </main>
@@ -8,11 +8,6 @@ const footerView = (dynamicValues) =>
 
         <!-- Begin footer -->
         <footer id="footer">
-            <nav>
-                <ul>
-                    <li><a href="/about">${about}</a></li>
-                </ul>
-            </nav>
             <p>${developedWithLove} <a href="https://victor-brito.dev/" title="Victor Brito (${newWindow})" hreflang="fr" target="_blank">Victor Brito</a></p>
         </footer>
         <!-- End footer -->
