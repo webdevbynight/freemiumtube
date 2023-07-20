@@ -4,5 +4,7 @@
         "language": "pt",
         "plural-forms": "nplurals=2; plural=(n!=1);"
     },
-    "%1 view": ["%1 vizualização", "%1 vizualizações"]
+    "%1 view": ["%1 vizualização", "%1 vizualizações"],
+    "Oops! something went wrong…": "Ups! algo de mal aconteceu…",
+    "Published on": "Publicado no"
 }

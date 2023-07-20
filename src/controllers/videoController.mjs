@@ -5,6 +5,7 @@ import videoModel from '../models/videoModel.mjs';
 
 import http404View from '../views/http404View.mjs';
 import videoTitleView from '../views/videoTitleView.mjs';
+import videoView from '../views/videoView.mjs';
 
 import indexControllers from './index.mjs';
 
@@ -13,7 +14,7 @@ const getPage = async (req, res) =>
         const i18n = gettext(),
             __dirname = indexControllers.getDirname('.'),
             generalConfig = indexControllers.getConfig(),
-            { lang, siteHost, siteName } = generalConfig,
+            { lang, locale, siteHost, siteName } = generalConfig,
             json = fs.readFileSync(`${__dirname}/../i18n/locales/${lang}/global.json`, 'utf-8'),
             pageFragments = [];
         
@@ -30,15 +31,20 @@ const getPage = async (req, res) =>
                 isVideoFound,
                 pageUrl: req.originalUrl
             },
+            videoViewParams =
+            {
+                lang,
+                locale,
+                video
+            },
             status = isVideoFound ? 200 : 404;
 
         pageFragments.push(indexControllers.getHeadPage());
         pageFragments.push(videoTitleView(videoTitleViewParams));
         pageFragments.push(await indexControllers.getheaderPage(req.originalUrl));
-        if (isVideoFound) pageFragments.push(''); // TODO: body template when the video is found
+        if (isVideoFound) pageFragments.push(videoView(videoViewParams));
         else pageFragments.push(http404View());
         pageFragments.push(indexControllers.getFooterPage());
-        console.log('video::before', video);
         
         return res.status(status).send(pageFragments.join(''));
     };
