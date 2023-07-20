@@ -248,4 +248,27 @@ if ('matchMedia' in window
             });
         }
     }
+
+    // Increment the views of a video
+    const video = document.querySelector('.video video');
+    if (video)
+    {
+        let isViewingCounted = false;
+        video.addEventListener('playing', () =>
+        {
+            if (!isViewingCounted)
+            {
+                const host = document.location.origin,
+                    id = document.location.pathname.replace('/videos/', ''),
+                    options = { method: 'PUT' };
+                fetch(`${host}/api/videos/${id}/increment`, options)
+                    .then((response) => response.status);
+                isViewingCounted = !isViewingCounted;
+            }
+        });
+        video.addEventListener('ended', () =>
+        {
+            if (isViewingCounted) isViewingCounted = !isViewingCounted;
+        })
+    }
 }
