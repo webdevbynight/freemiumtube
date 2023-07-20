@@ -3,7 +3,7 @@ import gettext from 'gettext.js';
 
 import indexControllers from './index.mjs';
 import headView from '../views/headView.mjs';
-import titleView from '../views/titleView.mjs';
+import accountTitleView from '../views/accountTitleView.mjs';
 import headerView from '../views/headerView.mjs';
 import accountView from '../views/accountView.mjs';
 import footerView from '../views/footerView.mjs';
@@ -28,7 +28,7 @@ const getPage = async (req, res) =>
             login = i18n.__('Log in'),
             about = i18n.__('About'),
             developedWithLove = i18n.__('Developped with love by'),
-            titleViewParams =
+            accountTitleViewParams =
             {
                 siteName,
                 myAccount
@@ -58,7 +58,7 @@ const getPage = async (req, res) =>
             };
 
         page.push(headView(generalConfig));
-        page.push(titleView(titleViewParams));
+        page.push(accountTitleView(accountTitleViewParams));
         page.push(headerView(headerViewParams));
         page.push(accountView(accountViewParams));
         page.push(footerView(footerViewParams));
