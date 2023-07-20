@@ -53,8 +53,8 @@ const headerView = (dynamicValues) =>
                     <button type="submit"><img src="/images/search.svg" alt="${searchVerb}"></button>
                 </p>
             </form>
-            <p><a href="/account" aria-current="true"><span>${myAccount}</span></a></p>
-            <!--<p><a href="/login"><span>${login}</span></a></p>-->
+            <!--<p><a href="/account" aria-current="true"><span>${myAccount}</span></a></p>-->
+            <p><a href="/login"><span>${login}</span></a></p>
         </header>
         <!-- End header -->
 
