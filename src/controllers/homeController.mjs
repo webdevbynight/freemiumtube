@@ -1,9 +1,12 @@
 import fs from 'node:fs';
 import gettext from 'gettext.js';
 
-import indexControllers from './index.mjs';
+import homeModel from '../models/homeModel.mjs';
+
 import homeTitleView from '../views/homeTitleView.mjs';
 import homeView from '../views/homeView.mjs';
+
+import indexControllers from './index.mjs';
 
 const getPage = async (req, res) =>
     {
@@ -17,7 +20,8 @@ const getPage = async (req, res) =>
         i18n.setLocale(lang);
         i18n.loadJSON(json);
         
-        const onlineVideoSharing = i18n.__('Online video sharing'),
+        const topPopularVideosList = await homeModel.getTopPopularVideos(),
+            onlineVideoSharing = i18n.__('Online video sharing'),
             topPopularVideos = i18n.__('Top popular videos'),
             homeTitleViewParams =
             {
@@ -28,6 +32,7 @@ const getPage = async (req, res) =>
             },
             homeViewParams =
             {
+                topPopularVideosList,
                 topPopularVideos
             };
 
