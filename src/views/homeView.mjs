@@ -30,7 +30,7 @@ const homeView = (dynamicValues) =>
 `
                 <section class="video-card">
                     <h3>
-                        <a href="/watch/${id}">
+                        <a href="/videos/${id}">
                             <img src="/images/default-poster.svg" alt="" width="320" height="180">
                             ${title}
                         </a>
