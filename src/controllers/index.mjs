@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import url from 'node:url';
 import gettext from 'gettext.js';
 
+import headerModel from '../models/headerModel.mjs';
+
 import headView from '../views/headView.mjs';
 import headerView from '../views/headerView.mjs';
 import footerView from '../views/footerView.mjs';
@@ -34,18 +36,21 @@ const getHeadPage = () =>
     {
         return headView(getConfig());
     },
-    getheaderPage = () =>
+    getheaderPage = async (pageUrl) =>
     {
-        const displayOtherLang = i18n.__('Display the site in another language'),
+        const languages = await headerModel.findAllLanguages(),
+            displayOtherLang = i18n.__('Display the site in another language'),
             search = i18n.__('Search'),
             searchVerb = i18n.__('To search'),
             myAccount = i18n.__('My account'),
             login = i18n.__('Log in'),
             headerViewParams =
             {
+                pageUrl,
                 lang,
                 siteName,
                 displayOtherLang,
+                languages,
                 search,
                 searchVerb,
                 myAccount,
@@ -69,8 +74,8 @@ const getHeadPage = () =>
 
 export default
 {
-    getDirname,
     getConfig,
+    getDirname,
     getHeadPage,
     getheaderPage,
     getFooterPage

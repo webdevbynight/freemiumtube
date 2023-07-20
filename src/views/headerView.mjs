@@ -1,7 +1,7 @@
 const headerView = (dynamicValues) =>
     {
-        const { lang, siteName, displayOtherLang, search, searchVerb, myAccount, login } = dynamicValues,
-            template =
+        const { pageUrl, lang, siteName, displayOtherLang, languages, search, searchVerb, myAccount, login } = dynamicValues;
+        let template =
 `
         <!-- Begin header -->
         <header id="header">
@@ -22,14 +22,30 @@ const headerView = (dynamicValues) =>
                     </svg>
                 </a>
             </h1>
+`;
+        if (languages.length)
+        {
+            template +=
+`
             <nav id="switch-languages">
                 <button type="button" title="${displayOtherLang}" data-current-lang="${lang}">${lang}</button>
                 <ul>
-                    <li><a href="./" lang="fr" hreflang="fr"${lang === 'fr' ? ' aria-current="true"' : ''}>Français</a></li>
-                    <li><a href="./" lang="en" hreflang="en"${lang === 'en' ? ' aria-current="true"' : ''}>English</a></li>
-                    <li><a href="./" lang="es" hreflang="es"${lang === 'es' ? ' aria-current="true"' : ''}>Español</a></li>
+`;
+            for (const language of languages)
+            {
+                template +=
+`
+                    <li><a href="${pageUrl}" lang="${language.lang}" hreflang="${language.lang}"${lang === language.lang ? ' aria-current="true"' : ''}>${language.description}</a></li>
+`;
+            }
+            template +=
+`
                 </ul>
             </nav>
+`;
+        }
+        template +=
+`
             <form id="search" action="/">
                 <p>
                     <label for="q">${search}</label>
@@ -45,7 +61,7 @@ const headerView = (dynamicValues) =>
         <!-- Begin content -->
         <main id="content">
 `;
-            return template;
+        return template;
     };
 
 export default headerView;

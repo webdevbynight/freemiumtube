@@ -30,7 +30,7 @@ const getPage = async (req, res) =>
 
         pageFragments.push(indexControllers.getHeadPage());
         pageFragments.push(accountTitleView(accountTitleViewParams));
-        pageFragments.push(indexControllers.getheaderPage());
+        pageFragments.push(await indexControllers.getheaderPage(req.originalUrl));
         pageFragments.push(accountView(accountViewParams));
         pageFragments.push(indexControllers.getFooterPage());
         
