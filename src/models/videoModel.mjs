@@ -8,7 +8,8 @@ const getAllVideosFromChannel = async (id) =>
                 `SELECT v.id AS id, v.title AS title, v.description AS description, src, views, published
                 FROM videos v
                 JOIN users u ON u.id = user_id
-                WHERE u.id = ?`,
+                WHERE u.id = ?
+                ORDER BY uploaded DESC`,
                 [result] = await db.query(sql, [id]);
             return result;
         }
