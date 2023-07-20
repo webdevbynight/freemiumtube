@@ -28,6 +28,7 @@ CREATE TABLE videos
 (
     id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     lang_id INT UNSIGNED NOT NULL,
+    user_id INT UNSIGNED NOT NULL,
     src VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
@@ -35,7 +36,8 @@ CREATE TABLE videos
     status TINYINT UNSIGNED NOT NULL,
     published INT UNSIGNED,
     views INT UNSIGNED NOT NULL DEFAULT(0),
-    CONSTRAINT FOREIGN KEY (lang_id) REFERENCES languages(id)
+    CONSTRAINT FOREIGN KEY (lang_id) REFERENCES languages(id),
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- Table comments
