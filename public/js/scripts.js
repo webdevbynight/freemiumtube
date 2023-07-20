@@ -77,14 +77,14 @@ if ('matchMedia' in window
                         element: 'button',
                         classList: ['play-pause', 'play'],
                         labels: ['Lire', 'Mettre en pause'],
-                        files: ['images/play.svg', 'images/pause.svg']
+                        files: ['/images/play.svg', '/images/pause.svg']
                     },
                     {
                         id: 'muteUnmute',
                         element: 'button',
                         classList: ['mute-unmute', 'mute'],
                         labels: ['Désactiver le son', 'Activer le son'],
-                        files: ['images/mute.svg', 'images/unmute.svg']
+                        files: ['/images/mute.svg', '/images/unmute.svg']
                     },
                     {
                         id: 'timer',
@@ -96,7 +96,7 @@ if ('matchMedia' in window
                         element: 'button',
                         classList: ['fullscreen', 'enter'],
                         labels: ['Afficher en plein écran', 'Quitter le mode plein écran'],
-                        files: ['images/fullscreen-enter.svg', 'images/fullscreen-exit.svg']
+                        files: ['/images/fullscreen-enter.svg', '/images/fullscreen-exit.svg']
                     }
                 ];
             video.controls = false;
