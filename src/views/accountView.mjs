@@ -1,6 +1,6 @@
 const accountView = (dynamicValues) =>
     {
-        const { lang, siteName, myAccount, displayOtherLang } = dynamicValues,
+        const { myAccount } = dynamicValues,
             template =
 `
             <section class="back-office-account">
