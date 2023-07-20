@@ -9,5 +9,9 @@
     "Delete my account": "Delete my account",
     "Upload a new video": "Upload a new video",
     "Edit": "Edit",
-    "Delete": "Delete"
+    "Delete": "Delete",
+    "Upload": "Upload",
+    "Video title": "Video title",
+    "Video description": "Video description",
+    "File": "File"
 }

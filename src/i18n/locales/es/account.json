@@ -9,5 +9,9 @@
     "Delete my account": "Suprimir mi cuenta",
     "Upload a new video": "Subir un nuevo vídeo",
     "Edit": "Editar",
-    "Delete": "Suprimir"
+    "Delete": "Suprimir",
+    "Upload": "Subir",
+    "Video title": "Título del vídeo",
+    "Video description": "Descripción del vídeo",
+    "File": "Fichero"
 }
