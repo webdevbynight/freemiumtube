@@ -8,6 +8,7 @@ This repository is a personal side project made during a course at Wild Code Sch
 
 - Clone this repository
 - Run command `npm run setup`
+- Create a `.env` file to configure the environment (the [`.env.sample`](./.env.sample) file can help you)
 
 ### Available commands
 
