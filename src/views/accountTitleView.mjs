@@ -1,4 +1,4 @@
-const titleView = (dynamicValues) =>
+const accountTitleView = (dynamicValues) =>
     {
         const { siteName, myAccount } = dynamicValues,
             template =
@@ -12,4 +12,4 @@ const titleView = (dynamicValues) =>
             return template;
     };
 
-export default titleView;
+export default accountTitleView;
