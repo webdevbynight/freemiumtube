@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import gettext from 'gettext.js';
 
-import indexControllers from './index.mjs';
 import accountTitleView from '../views/accountTitleView.mjs';
 import accountView from '../views/accountView.mjs';
+
+import indexControllers from './index.mjs';
 
 const getPage = async (req, res) =>
     {
