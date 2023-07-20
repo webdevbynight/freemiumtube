@@ -1,5 +1,3 @@
-import url from 'node:url';
-import fs from 'node:fs';
 import express from 'express';
 
 import homeController from '../controllers/homeController.mjs';
