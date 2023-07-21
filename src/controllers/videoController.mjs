@@ -97,6 +97,15 @@ const getPage = async (req, res) =>
 
         return res.sendStatus(status);
     },
+    update = async (req, res) =>
+    {
+        const { title, description } = req.body,
+            result = await videoModel.update(Number.parseInt(req.params.id, 10), title, description),
+            { affectedRows } = result,
+            status = affectedRows ? 204: 404;
+
+        return res.sendStatus(status);
+    },
     remove = async (req, res) =>
     {
         const __dirname = indexControllers.getDirname('.'),
@@ -114,5 +123,6 @@ export default
     getPage,
     add,
     increment,
+    update,
     remove
 };

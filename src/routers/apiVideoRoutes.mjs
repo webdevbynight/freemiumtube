@@ -7,6 +7,7 @@ const router = express.Router(),
     upload = multer({ dest: './public/uploads/' });
 
 router.post('/', upload.single('video'), videoController.add);
+router.put('/:id', videoController.update);
 router.put('/:id/increment', videoController.increment);
 router.delete('/:id', videoController.remove);
 

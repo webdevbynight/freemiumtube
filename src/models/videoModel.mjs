@@ -68,6 +68,19 @@ const getAllVideosFromChannel = async (id) =>
             console.error(err);
         }
     },
+    update = async (id, title, description) =>
+    {
+        try
+        {
+            const sql = `UPDATE videos SET title = ?, description = ? WHERE id = ?`,
+                [result] = await db.query(sql, [title, description, id]);
+            return result;
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
+    },
     remove = async (id) =>
     {
         try
@@ -88,5 +101,6 @@ export default
     getVideoById,
     add,
     increment,
+    update,
     remove
 };

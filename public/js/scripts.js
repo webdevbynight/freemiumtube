@@ -296,6 +296,39 @@ if ('matchMedia' in window
         });
     }
     
+    // Update a video
+    const videoUpdateForm = document.querySelector('.back-office-form.update');
+    if (videoUpdateForm)
+    {
+        videoUpdateForm.addEventListener('submit', (e) =>
+        {
+            e.preventDefault();
+
+            const id = document.location.pathname.replace(/[^0-9]/g, ''),
+                fields = new FormData(e.target),
+                data = {};
+            for (const [key, value] of fields)
+            {
+                data[key] = value; 
+            }
+            const options =
+                {
+                    method: 'PUT',
+                    headers:
+                    {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                };
+            fetch(`${host}/api/videos/${id}`, options)
+                .then((response) =>
+                {
+                    if (response.status === 204) document.location.href = `${host}/account/videos`;
+                })
+                .catch((err) => console.error(err));
+        });
+    }
+    
     // Delete a video
     const videoDeleteForm = document.querySelector('.back-office-form.confirm');
     if (videoDeleteForm)
