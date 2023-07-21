@@ -71,7 +71,3 @@ INSERT INTO languages (lang, locale, description) VALUES
 -- Insertions for users
 INSERT INTO users (lang_id, email, password, channel, description, url, registered, role)
     VALUES(1, 'contact@victor-brito.name', '123456', 'webdevbynight', 'Front-end developer', 'https://victor-brito.dev', UNIX_TIMESTAMP(), 1);
-
--- Insertion for videos (provisional)
-INSERT INTO videos (lang_id, user_id, src, title, description, uploaded, status, published)
-    VALUES(1, 1, 'video-sample-1835-1080p.mp4', 'Storm in Paris', 'A storm filmed during a week-end in the afternoon in Paris from a restaurant.', UNIX_TIMESTAMP(), 7, UNIX_TIMESTAMP());
