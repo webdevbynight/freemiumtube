@@ -9,7 +9,8 @@ const getTopPopularVideos = async () =>
                 FROM videos v
                 JOIN users u ON u.id = user_id
                 WHERE status >> 2 = 1
-                ORDER BY views DESC, published DESC`,
+                ORDER BY views DESC, published DESC
+                LIMIT 0, 12`,
                 [result] = await db.query(sql);
             return result;
         }
