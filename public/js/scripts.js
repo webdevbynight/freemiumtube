@@ -281,8 +281,8 @@ if ('matchMedia' in window
         {
             e.preventDefault();
 
-            const data = new FormData(e.target);
-            const options =
+            const data = new FormData(e.target),
+                options =
                 {
                     method: 'POST',
                     body: data
@@ -293,6 +293,45 @@ if ('matchMedia' in window
                     if (response.status === 201) document.location.href = `${host}/account/videos`;
                 })
                 .catch((err) => console.error(err));
+        });
+    }
+    
+    // Delete a video
+    const videoDeleteForm = document.querySelector('.back-office-form.confirm');
+    if (videoDeleteForm)
+    {
+        videoDeleteForm.addEventListener('submit', (e) =>
+        {
+            e.preventDefault();
+
+            const id = document.location.pathname.replace(/[^0-9]/g, ''),
+                fields = new FormData(e.target),
+                data = {};
+            for (const [key, value] of fields)
+            {
+                data[key] = value; 
+            }
+            const options =
+                {
+                    method: 'DELETE',
+                    headers:
+                    {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                };
+            fetch(`${host}/api/videos/${id}`, options)
+                .then((response) =>
+                {
+                    if (response.status === 204) document.location.href = `${host}/account/videos`;
+                })
+                .catch((err) => console.error(err));
+        });
+        videoDeleteForm.addEventListener('reset', (e) =>
+        {
+            e.preventDefault();
+
+            document.location.href = `${host}/account/videos`;
         });
     }
 }

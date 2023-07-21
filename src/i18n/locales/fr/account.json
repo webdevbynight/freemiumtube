@@ -13,5 +13,8 @@
     "Upload": "Téléverser",
     "Video title": "Intitulé de la vidéo",
     "Video description": "Description de la vidéo",
-    "File": "Fichier"
+    "File": "Fichier",
+    "Are you sure to really want to delete the video entitled %1": "Êtes-vous sûr de bien vouloir supprimer la vidéo intitulée %1&nbsp;?",
+    "Cancel": "Annuler",
+    "Confirm": "Confirmer"
 }

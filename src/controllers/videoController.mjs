@@ -96,6 +96,23 @@ const getPage = async (req, res) =>
             status = affectedRows ? 204 : 404;
 
         return res.sendStatus(status);
+    },
+    remove = async (req, res) =>
+    {
+        const __dirname = indexControllers.getDirname('.'),
+            { userId, src } = req.body,
+            result = await videoModel.remove(Number.parseInt(req.params.id, 10)),
+            { affectedRows } = result,
+            status = affectedRows ? 204: 404;
+        if (affectedRows) fs.rmSync(`${__dirname}../../public/uploads/${userId}/${src}`);
+
+        return res.sendStatus(status);
     };
 
-export default { getPage, add, increment };
+export default
+{
+    getPage,
+    add,
+    increment,
+    remove
+};

@@ -13,5 +13,8 @@
     "Upload": "Subir",
     "Video title": "Título del vídeo",
     "Video description": "Descripción del vídeo",
-    "File": "Fichero"
+    "File": "Fichero",
+    "Are you sure to really want to delete the video entitled %1": "¿&nbsp;Está seguro de realmente querer suprimir el vídeo titulado %1&nbsp;?",
+    "Cancel": "Cancelar",
+    "Confirm": "Confirmar"
 }

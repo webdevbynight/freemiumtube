@@ -67,6 +67,19 @@ const getAllVideosFromChannel = async (id) =>
         {
             console.error(err);
         }
+    },
+    remove = async (id) =>
+    {
+        try
+        {
+            const sql = `DELETE FROM videos WHERE id = ?`,
+                [result] = await db.query(sql, [id]);
+            return result;
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
     };
 
 export default
@@ -74,5 +87,6 @@ export default
     getAllVideosFromChannel,
     getVideoById,
     add,
-    increment
+    increment,
+    remove
 };

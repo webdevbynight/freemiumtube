@@ -8,5 +8,6 @@ const router = express.Router(),
 
 router.post('/', upload.single('video'), videoController.add);
 router.put('/:id/increment', videoController.increment);
+router.delete('/:id', videoController.remove);
 
 export default router;

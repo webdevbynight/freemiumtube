@@ -13,5 +13,8 @@
     "Upload": "Upload",
     "Video title": "Video title",
     "Video description": "Video description",
-    "File": "File"
+    "File": "File",
+    "Are you sure to really want to delete the video entitled %1": "Are you sure to really want to delete the video entitled %1?",
+    "Cancel": "Cancel",
+    "Confirm": "Confirm"
 }
