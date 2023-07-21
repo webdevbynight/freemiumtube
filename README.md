@@ -15,3 +15,5 @@ This repository is a personal side project made during a course at Wild Code Sch
 - `browser-sync`: starts a server running at `192.168.1.11` and synchronising browsers (pratical to test the responsiveness of the project)
 - `validate-html`: checks whether the static HTML templates are valid HTML 5 files
 - `migrate`: runs the database migration script
+- `dev`: runs the server in a development environment
+- `start`: runs the server (needs to be shut down and rerun in case of changes)
