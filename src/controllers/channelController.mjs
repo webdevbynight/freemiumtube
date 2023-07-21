@@ -49,7 +49,6 @@ const getPage = async (req, res) =>
         if (isChannelFound) pageFragments.push(channelView(channelViewParams));
         else pageFragments.push(http404View());
         pageFragments.push(indexControllers.getFooterPage());
-        console.log('channels::after', channel.id, typeof channel.id, videos);
         
         return res.status(status).send(pageFragments.join(''));
     };
