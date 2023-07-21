@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import gettext from 'gettext.js';
+import joi from 'joi';
 
 import videoModel from '../models/videoModel.mjs';
 
@@ -48,6 +49,46 @@ const getPage = async (req, res) =>
         
         return res.status(status).send(pageFragments.join(''));
     },
+    add = async (req, res) =>
+    {
+        const { title, description } = req.body,
+            id = Number.parseInt(req.body.id, 10),
+            langId = Number.parseInt(req.body.langId, 10),
+            status = Number.parseInt(req.body.status, 10),
+            temporaryDirectory = `./public/uploads`,
+            definitiveDirectory = `./public/uploads/${id}`,
+            { filename } = req.file,
+            schema = joi.object
+            ({
+                title: joi.string().max(255, 'utf8').required(),
+                description: joi.string().required(),
+                id: joi.number().positive().integer().required(),
+                langId: joi.number().positive().integer().required(),
+                status: joi.number().positive().integer().required(),
+                filename: joi.string().required()
+            }),
+            { value, error } = schema.validate
+            ({
+                title,
+                description,
+                id,
+                langId,
+                status,
+                filename
+            });
+        
+        if (error)
+        {
+            console.error(error);
+            return res.status(400).send(error);
+        }
+        fs.mkdirSync(definitiveDirectory, { recursive: true });
+        fs.renameSync(`${temporaryDirectory}/${filename}`, `${definitiveDirectory}/${filename}.mp4`);
+        const result = await videoModel.add(value.title, value.description, value.id, value.langId, value.status, `${filename}.mp4`);
+        if (result.insertId) return res.sendStatus(201);
+        fs.rmSync(`${definitiveDirectory}/${filename}.mp4`);
+        return res.status(400).send('Something went wrong.');
+    },
     increment = async (req, res) =>
     {
         const result = await videoModel.increment(Number.parseInt(req.params.id, 10)),
@@ -57,4 +98,4 @@ const getPage = async (req, res) =>
         return res.sendStatus(status);
     };
 
-export default { getPage, increment };
+export default { getPage, add, increment };

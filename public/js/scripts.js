@@ -249,6 +249,8 @@ if ('matchMedia' in window
         }
     }
 
+    const host = document.location.origin;
+
     // Increment the views of a video
     const video = document.querySelector('.video video');
     if (video)
@@ -258,8 +260,7 @@ if ('matchMedia' in window
         {
             if (!isViewingCounted)
             {
-                const host = document.location.origin,
-                    id = document.location.pathname.replace('/videos/', ''),
+                const id = document.location.pathname.replace('/videos/', ''),
                     options = { method: 'PUT' };
                 fetch(`${host}/api/videos/${id}/increment`, options)
                     .then((response) => response.status);
@@ -270,5 +271,28 @@ if ('matchMedia' in window
         {
             if (isViewingCounted) isViewingCounted = !isViewingCounted;
         })
+    }
+
+    // Upload a video
+    const videoUploadForm = document.querySelector('.back-office-form.upload');
+    if (videoUploadForm)
+    {
+        videoUploadForm.addEventListener('submit', (e) =>
+        {
+            e.preventDefault();
+
+            const data = new FormData(e.target);
+            const options =
+                {
+                    method: 'POST',
+                    body: data
+                };
+            fetch(`${host}/api/videos`, options)
+                .then((response) =>
+                {
+                    if (response.status === 201) document.location.href = `${host}/account/videos`;
+                })
+                .catch((err) => console.error(err));
+        });
     }
 }

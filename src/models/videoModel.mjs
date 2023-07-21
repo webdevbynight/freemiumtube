@@ -35,6 +35,26 @@ const getAllVideosFromChannel = async (id) =>
             console.error(err);
         }
     },
+    add = async (title, description, id, langId, status, src) =>
+    {
+        try
+        {
+            const isPublished = status >> 1,
+                sql =
+                    isPublished ?
+                        `INSERT INTO videos (lang_id, user_id, src, title, description, uploaded, status, published)
+                        VALUES(?, ?, ?, ?, ?, UNIX_TIMESTAMP(), ?, UNIX_TIMESTAMP());`
+                    :
+                        `INSERT INTO videos (lang_id, user_id, src, title, description, uploaded, status)
+                        VALUES(?, ?, ?, ?, ?, UNIX_TIMESTAMP(), ?);`,
+                [result] = await db.query(sql, [langId, id, src, title, description, status]);
+            return result;
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
+    },
     increment = async (id) =>
     {
         try
@@ -53,5 +73,6 @@ export default
 {
     getAllVideosFromChannel,
     getVideoById,
+    add,
     increment
 };
