@@ -5,7 +5,7 @@ import indexControllers from '../controllers/index.mjs';
 
 const videoView = (dynamicValues) =>
 {
-    const { lang, locale, video: { title, description, src, channelId, views, published } } = dynamicValues,
+    const { lang, locale, video: { title, description, userId, src, channelId, views, published } } = dynamicValues,
         channelTitle = dynamicValues.video.channelTitle !== null ? dynamicValues.video.channelTitle : channelId,
         i18n = gettext(),
         __dirname = indexControllers.getDirname('.'),
@@ -30,7 +30,7 @@ const videoView = (dynamicValues) =>
                     <p>${i18n._n('%1 view', '%1 views', views, views)}</p>
                 </header>
                 <video width="1920" controls preload="metadata" poster="/images/default-poster.svg">
-                    <source src="/videos/${src}" type="video/mp4">
+                    <source src="/uploads/${userId}/${src}" type="video/mp4">
                     <span>${i18n.__('Oops! something went wrong…')}</span>
                 </video>
                 <p>${description}</p>
