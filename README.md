@@ -1,6 +1,8 @@
 # FreemiumTube
 
-This repository is a personal side project made during a course at Wild Code School.
+This repository is an individual project made for a checkpoint during a course at Wild Code School.
+
+It has been made with vanilla JavaScript for the front-end part and Node.js and Express for the back-end part.
 
 ## Setup and use
 
