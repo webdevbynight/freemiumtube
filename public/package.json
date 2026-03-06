@@ -7,5 +7,8 @@
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "w3c-html-validator": "^2.2.0"
+  },
+  "overrides": {
+    "immutable": "^4.3.8"
   }
 }
